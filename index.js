@@ -11,7 +11,7 @@ const bot = new Discord.Client();
 
 const queue = new Map();
 
-client.once("ready", () => {
+client.on("ready", () => {
   console.log(`Bot Online, ${client.user.tag}`);
 client.user.setPresence({
         game: { 
@@ -78,7 +78,7 @@ async function execute(message, serverQueue) {
   const song = {
     title: songInfo.title,
     url: songInfo.video_url
-  };
+  }
 
   if (!serverQueue) {
     const queueContruct = {
